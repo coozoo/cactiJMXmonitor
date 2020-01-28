@@ -28,7 +28,7 @@ Note: you need to open JMX like this but remember don't use it in real env and d
 
 ### JAVA and Environment Perfomance
 
- To start about 50 java jmx collectors processes that's how script configured by default.
+ To start about 50 java jmx collectors processes (that's how script configured).
  
  System with CPU: 2.3 GHz 4 cores.
   - java-1.8.0 - execution time about 4-6 seconds;
@@ -36,7 +36,7 @@ Note: you need to open JMX like this but remember don't use it in real env and d
   
   Monitoring of 4 java instances (4 parallel executions of script) will take about 10-15 seconds in case if everything fine.
   
-  Sometime Java can be slow when leaking or some problems and jmx answer the same can be slow as result in case of one minute polling script can finish by timeout and you will get empty results.
+  Sometimes Java can be slow when leaking or some problems and jmx answer the same can be slow. As result in case of one minute polling this script can finish by timeout and you will get empty results.
   
   But in most cases it will work fine.
   
