@@ -2,7 +2,7 @@
 
 ## Info
 
-This script canbe executed from shell
+This script can be executed from shell
 
 Replace IP port with yours values
 

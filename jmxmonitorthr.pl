@@ -1,7 +1,7 @@
 #!/usr/bin/perl
 #usage: call script with two arguments - jmx host and ip
 #	if you have username and password then add two more arguments
-#example: ./jmxmonitor 35.234.135.193 1098 user password
+#example: ./jmxmonitor 127.0.0.1 1098 user password
 
 #additional description:
 #nonthreaded average time of execution around 50-60 seconds for an all values
