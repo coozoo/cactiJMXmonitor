@@ -212,9 +212,11 @@ else
 			['G1OldGencommitted', 'java.lang:type=MemoryPool,name=G1 Old Gen', 'Usage', 'committed'],
 			['G1OldGenmax', 'java.lang:type=MemoryPool,name=G1 Old Gen', 'Usage', 'max'],
 		# codecache memory in java 9-11 replaced by CodeHeap 'non-nmethods', CodeHeap 'non-profiled nmethods', CodeHeap 'profiled nmethods'
-		#	['CodeCacheused', 'java.lang:type=MemoryPool,name=Code Cache', 'Usage', 'used'],
-		#	['CodeCachecommitted', 'java.lang:type=MemoryPool,name=Code Cache', 'Usage', 'committed'],
-		#	['CodeCachemax', 'java.lang:type=MemoryPool,name=Code Cache', 'Usage', 'max'],
+		# "great idea" to use single quotes inside names...
+		# I'm not adding Codeheap max because accordingly oracle in a future it can be dynamic
+			['CodeHeapNMused', 'java.lang:type=MemoryPool,name=CodeHeap \'non-nmethods\'', 'Usage', 'used'],
+			['CodeHeapNPMused', 'java.lang:type=MemoryPool,name=CodeHeap \'non-profiled nmethods\'', 'Usage', 'used'],
+			['CodeHeapPMused', 'java.lang:type=MemoryPool,name=CodeHeap \'profiled nmethods\'', 'Usage', 'used'],
 			['CompressedClassSpaceused', 'java.lang:type=MemoryPool,name=Compressed Class Space', 'Usage', 'used'],
 			['CompressedClassSpacecommitted', 'java.lang:type=MemoryPool,name=Compressed Class Space', 'Usage', 'committed'],
 			['CompressedClassSpacemax', 'java.lang:type=MemoryPool,name=Compressed Class Space', 'Usage', 'max'],
