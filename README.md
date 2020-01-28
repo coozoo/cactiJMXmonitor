@@ -26,14 +26,39 @@ Note: you need to open JMX like this but remember don't use it in real env and d
 
 ## Setup
 
+### JAVA and Environment Perfomance
+
+ To start about 50 java jmx collectors processes that's how script configured by default.
+ System with CPU: 2.3 GHz 4 cores.
+  - java-1.8.0 - execution time about 4-6 seconds;
+  - java-11 - 18-20 seconds.
+  
+  **Don't use java 11 to run this script you will struggle from perfomance!!!!!!!!**
+  **Not sure but suppose with newer you will get the same result**
+
+Install java (example for fedora):
+```bash
+# dnf install java-1.8.0-openjdk-headless
+```
+
+If you have multiple java installations switch default one by executing command line and enter number:
+```bash
+# alternatives --config java
+```
+
+If you need default to be another java, then modify script with full path to java binary.
+
+### Copy Script to cacti
+
 Copy jmxmonitorthr.pl, jmxquery.jar to
 /var/lib/cacti/scripts
 
 ```bash
 $ git clone https://github.com/coozoo/cactiJMXmonitor
-cd cactiJMXmonitor
-cp jmxmonitorthr.pl /var/lib/cacti/scripts/
-cp jmxquery.jar /var/lib/cacti/scripts/
+$ cd cactiJMXmonitor
+$ chmod 777 jmxmonitorthr.pl
+$ cp jmxmonitorthr.pl /var/lib/cacti/scripts/
+$ cp jmxquery.jar /var/lib/cacti/scripts/
 ```
 
 Cacti templates will be provided later.

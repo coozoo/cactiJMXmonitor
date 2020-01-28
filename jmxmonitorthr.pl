@@ -50,6 +50,14 @@ elsif ($num_args == 4)
 
 my $jmxURL = "service:jmx:rmi:///jndi/rmi://$jmxIP:$jmxPort/jmxrmi";
 #print $jmxURL."\n";
+# those parameters speed up java execution
+# -Xint about 1-2 seconds (why I can't explain)
+# -dsa about 1 second
+# -client about 1 second
+# to start about 50 java jmx collectors processes 
+# 2.3 GHz 4 cores
+# java8 - execution time about 4-6 seconds
+# java11 - 18-20 seconds. Don't use java 11 for that !!!!!!!!
 my $baseCommand="java -jar -client -Xint -dsa $dirname$fsep$jarPluginName";
 #no user then no password and vice versa
 if ($userName ne '' && $userPassword ne '')
