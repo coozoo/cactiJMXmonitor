@@ -29,12 +29,20 @@ Note: you need to open JMX like this but remember don't use it in real env and d
 ### JAVA and Environment Perfomance
 
  To start about 50 java jmx collectors processes that's how script configured by default.
+ 
  System with CPU: 2.3 GHz 4 cores.
   - java-1.8.0 - execution time about 4-6 seconds;
   - java-11 - 18-20 seconds.
   
+  Monitoring of 4 java instances (4 parallel executions of script) will take about 10-15 seconds in case if everything fine.
+  
+  Sometime Java can be slow when leaking or some problems and jmx answer the same can be slow as result in case of one minute polling script can finish by timeout and you will get empty results.
+  
+  But in most cases it will work fine.
+  
   **Don't use java 11 to run this script you will struggle from perfomance!!!!!!!!**
-  **Not sure but suppose with newer you will get the same result**
+  
+  **Not sure but suppose with newer java you will get the same result**
 
 Install java (example for fedora):
 ```bash
@@ -46,12 +54,11 @@ If you have multiple java installations switch default one by executing command 
 # alternatives --config java
 ```
 
-If you need default to be another java, then modify script with full path to java binary.
+If you need default to be another version of java, then modify script with full path to java binary.
 
 ### Copy Script to cacti
 
-Copy jmxmonitorthr.pl, jmxquery.jar to
-/var/lib/cacti/scripts
+Copy jmxmonitorthr.pl, jmxquery.jar to /var/lib/cacti/scripts
 
 ```bash
 $ git clone https://github.com/coozoo/cactiJMXmonitor
