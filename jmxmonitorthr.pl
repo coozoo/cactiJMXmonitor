@@ -28,7 +28,7 @@ my $fsep = canonpath "/";
 my $dirname = dirname(__FILE__);
 my $jarPluginName = "jmxquery.jar";
 
-my $jmxIP = '35.234.135.193';
+my $jmxIP = '127.0.0.1';
 my $jmxPort = '1098';
 my $userName = '';
 my $userPassword = '';
@@ -53,7 +53,7 @@ my $jmxURL = "service:jmx:rmi:///jndi/rmi://$jmxIP:$jmxPort/jmxrmi";
 # those parameters speed up java execution
 # -Xint about 1-2 seconds (why I can't explain)
 # -dsa about 1 second
-# -client about 1 second
+# -client about 1-10 second
 # to start about 50 java jmx collectors processes 
 # 2.3 GHz 4 cores
 # java8 - execution time about 4-6 seconds
