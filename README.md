@@ -102,7 +102,7 @@ IMPORTANT: Navigate to "Console"->"Configuration"->"Settings" and at the far bot
 
 1. Navigate To "Console"->"Create"->"New Device"
 
-2. Select "JMX - Device (Java9+)" and fill all other required data as wish.
+2. Select "JMX - Device (Java9+)" and fill all other required data as you wish.
 
 3. After successfull Device creation go to "Console"->"Create"->"New Graph" and select just created device from "Device" dropdown.
 
