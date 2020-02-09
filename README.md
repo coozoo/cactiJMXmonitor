@@ -1,6 +1,8 @@
-# cactiJMXmonitor
+# cacti JMX monitor
 
 ## Info
+
+Script and templates to monitor JVM machine parameters in cacti.
 
 Configured device looks like this:
 
@@ -94,17 +96,17 @@ Steps to install:
 
 ### Create Device and Graphs
 
-IMPORTANT: Navigate to "Console"->"Configuration"->"Settings" and at the far bottom disable "Enable Automatic Graph Creation". Otherwise you will get a lot of data sources for one device which intended to be the only one.
+IMPORTANT: Navigate to "Console"->"Configuration"->"Settings" and at the far bottom disable "Enable Automatic Graph Creation". Otherwise you will get a lot of data sources for one device which intended to be the only one (even in this case it can fail see below).
 
-Navigate To "Console"->"Create"->"New Device"
+1. Navigate To "Console"->"Create"->"New Device"
 
-Select "JMX - Device (Java9+)" and fill all other required data as wish.
+2. Select "JMX - Device (Java9+)" and fill all other required data as wish.
 
-After successfull Device creation go to "Console"->"Create"->"New Graph" and select just created device from "Device" dropdown.
+3. After successfull Device creation go to "Console"->"Create"->"New Graph" and select just created device from "Device" dropdown.
 
-Mark Select All (or better switch graphs what you need) check box at the top of table and press create.
+4. Mark Select All (or better switch graphs what you need) check box at the top of table and press create.
 
-Now the most annoying part:
+**Now the most annoying part:**
 
 Insert IP and port for each graph... in case of select all you need to do that 24*2 times... And press Create..
 
@@ -118,11 +120,7 @@ Inside of each datasource you should point the same rrd file. The easiest way to
 
 After that enable the only one "Data Source" for that device all other will disabled but graph should use the same RRD...
 
-I'm lucky and in one of my cacti set up after few such devices I'm getting stable one data source at creation.
+I'm lucky and in one of my cacti set up after few such devices with lot of datasources I'm getting stable one data source at creation.
 
 
 BTW I never succeded to setup spine to use with custom scripts so I'm still using the old cmd poller.
-
-
-
-
