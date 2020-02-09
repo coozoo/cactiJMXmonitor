@@ -218,7 +218,8 @@ else
 			['CodeHeapNPMused', 'java.lang:type=MemoryPool,name=CodeHeap \'non-profiled nmethods\'', 'Usage', 'used'],
 			['CodeHeapPMused', 'java.lang:type=MemoryPool,name=CodeHeap \'profiled nmethods\'', 'Usage', 'used'],
 			['CompressedClassSpaceused', 'java.lang:type=MemoryPool,name=Compressed Class Space', 'Usage', 'used'],
-			['CompressedClassSpacecommitted', 'java.lang:type=MemoryPool,name=Compressed Class Space', 'Usage', 'committed'],
+# you can comment any other of counters if you don't need them to reduce system load
+#			['CompressedClassSpacecommitted', 'java.lang:type=MemoryPool,name=Compressed Class Space', 'Usage', 'committed'],
 			['CompressedClassSpacemax', 'java.lang:type=MemoryPool,name=Compressed Class Space', 'Usage', 'max'],
 			['G1OldGenerationCollectionCount', 'java.lang:type=GarbageCollector,name=G1 Old Generation', 'CollectionCount', ''],
 			['G1OldGenerationCollectionTime', 'java.lang:type=GarbageCollector,name=G1 Old Generation', 'CollectionTime', ''],
