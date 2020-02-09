@@ -1,4 +1,4 @@
-# cacti JMX monitor
+# JMX - Cacti
 
 ## Info
 
