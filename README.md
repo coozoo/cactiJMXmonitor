@@ -4,7 +4,7 @@
 
 Configured device looks like this:
 
-<img src="https://user-images.githubusercontent.com/25594311/74098571-9771a480-4b22-11ea-8b42-f5ba16bd3f06.png" width="60%"></img> 
+<img src="https://user-images.githubusercontent.com/25594311/74098571-9771a480-4b22-11ea-8b42-f5ba16bd3f06.png" width="80%"></img> 
 
 ## Script
 
