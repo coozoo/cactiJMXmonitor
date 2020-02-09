@@ -106,7 +106,7 @@ Mark Select All (or better switch graphs what you need) check box at the top of 
 
 Now the most annoying part:
 
-Insert IP and port for each graph... in case of select all 24*2.. And press Create..
+Insert IP and port for each graph... in case of select all you need to do that 24*2 times... And press Create..
 
 Even in this case sometimes I'm getting separate datasource for each graph (it's some bug in cacti, I've opened it few times and it was fixed somehow. After those fixes it works from time to time).
 
