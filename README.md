@@ -72,8 +72,7 @@ Copy jmxmonitorthr.pl, jmxquery.jar to /var/lib/cacti/scripts
 $ git clone https://github.com/coozoo/cactiJMXmonitor
 $ cd cactiJMXmonitor
 $ chmod 777 jmxmonitorthr.pl
-$ cp jmxmonitorthr.pl /var/lib/cacti/scripts/
-$ cp jmxquery.jar /var/lib/cacti/scripts/
+$ cp jmxmonitorthr.pl /var/lib/cacti/scripts/ && cp jmxquery.jar /var/lib/cacti/scripts/
 ```
 
 ### Import Host Template
@@ -92,4 +91,38 @@ Steps to install:
 2. Press "Select a file" button and find downloaded cacti_host_template_jmx_-_device_java9.xml
 3. Unmark "Preview Import Only" (sure you can try it to view changes)
 4. Select "Data Source Profile" - "1 Minute Collection" will work fine (I'm using custom 1 minute to save data longer)
+
+### Create Device and Graphs
+
+IMPORTANT: Navigate to "Console"->"Configuration"->"Settings" and at the far bottom disable "Enable Automatic Graph Creation". Otherwise you will get a lot of data sources for one device which intended to be the only one.
+
+Navigate To "Console"->"Create"->"New Device"
+
+Select "JMX - Device (Java9+)" and fill all other required data as wish.
+
+After successfull Device creation go to "Console"->"Create"->"New Graph" and select just created device from "Device" dropdown.
+
+Mark Select All (or better switch graphs what you need) check box at the top of table and press create.
+
+Now the most annoying part:
+
+Insert IP and port for each graph... in case of select all 24*2.. And press Create..
+
+Even in this case sometimes I'm getting separate datasource for each graph (it's some bug in cacti, I've opened it few times and it was fixed somehow. After those fixes it works from time to time).
+
+So if you got a lot of datasources ("Console"->"Managment"->"Data Sources" select you device) more than one.
+
+Then select at the bottom from dropdown "Disable" option and mark checkbox on the top of table Select All and now press Go to disable all of them.
+
+Inside of each datasource you should point the same rrd file. The easiest way to open each datasource in new tab and navigate through all and paste the same rrd into "Data Source Path" field and save.
+
+After that enable the only one "Data Source" for that device all other will disabled but graph should use the same RRD...
+
+I'm lucky and in one of my cacti set up after few such devices I'm getting stable one data source at creation.
+
+
+BTW I never succeded to setup spine to use with custom scripts so I'm still using the old cmd poller.
+
+
+
 
